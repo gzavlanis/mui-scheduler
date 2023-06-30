@@ -12,13 +12,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { NavLink } from 'react-router-dom'
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/gzavlanis">
+        Georgios Zavlanis
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,6 +43,10 @@ export default function SignIn() {
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <Typography component="h1" variant="h3">
+          AGENDA
+        </Typography>
+        <hr></hr>
         <Box
           sx={{
             marginTop: 8,
@@ -65,14 +70,14 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+                <Link>Forgot password?</Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+                <NavLink to="/signup">
+                  <Link href="#" variant="body2">
+                    "Don't have an account? Sign Up"
+                  </Link>
+                </NavLink>
               </Grid>
             </Grid>
           </Box>

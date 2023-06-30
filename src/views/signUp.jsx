@@ -12,12 +12,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { NavLink } from 'react-router-dom'
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="https://github.com/gzavlanis">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -25,8 +26,6 @@ function Copyright(props) {
     </Typography>
   )
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme()
 
@@ -44,6 +43,10 @@ export default function SignUp() {
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <Typography component="h1" variant="h3">
+          AGENDA
+        </Typography>
+        <hr></hr>
         <Box
           sx={{
             marginTop: 8,
@@ -81,9 +84,11 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <NavLink to = "/">
+                  <Link href="#" variant="body2">
+                    Already have an account? Sign in
+                  </Link>
+                </NavLink>
               </Grid>
             </Grid>
           </Box>
